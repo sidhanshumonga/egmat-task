@@ -1,0 +1,14 @@
+<form [formGroup]="valueForm">
+    <p class="value-text mr-2">Current</p>
+    <input type="number" formControlName="currentValue" class="value-input mx-2" [class.error]="error">
+    <p class="value-text mr-2">Target</p>
+    <input type="number" formControlName="targetValue" class="value-input mx-2" [class.error]="error">
+</form>
+
+<mat-error *ngIf="hasError('targetValue', 'max')">{{type}} target value must be less than or equal to 60
+</mat-error>
+<!-- <mat-error *ngIf="valueForm.controls.targetValue.touched && hasError('targetValue', 'required')">{{type}} target value
+    is required</mat-error> -->
+<mat-error *ngIf="hasError('currentValue', 'max')">{{type}} current value must be less than or equal to 60</mat-error>
+<!-- <mat-error *ngIf="valueForm.controls.currentValue.touched && hasError('currentValue', 'required')">{{type}} current
+    value is required</mat-error> -->

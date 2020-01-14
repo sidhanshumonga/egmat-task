@@ -1,0 +1,22 @@
+.value-text {
+    font-family: Century 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:18px;
+    margin: 0;
+    font-weight: 100;
+    display:inline-block;
+    color: gray;
+}
+
+.value-input {
+    display:inline-block;
+    width: 75px;
+}
+
+.value-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.error {
+    border: 1px solid red;
+}

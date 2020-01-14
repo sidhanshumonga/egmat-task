@@ -1,0 +1,36 @@
+<div class="row total-score-row justify-content-center p-5">
+    <div class="col col-lg-8 col-md-8 col-sm-8 p-2">
+        <p class="head-text">Total Score</p>
+        <p class="head-score mt-2">currentWidth</p>
+        <div class="strike-score mt-5" width="100%">
+            <div class="strike-score-target" [style.width]="targetWidthp + '%'"
+                [@flyInOut]="{value: 'for', params: {width: targetWidthp}}"></div>
+            <div class="strike-score-current" [style.width]="currentWidthp + '%'"
+                [@flyInOut]="{value: 'for', params: {width: currentWidthp}}"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5 scores-row justify-content-center">
+    <div class="col col-lg-4 col-md-4 col-sm-4 scores-col">
+        <p class="head-text">Quant Score</p>
+        <p class="head-score mt-2">Q{{currentWidthQ}}</p>
+        <div class="strike-score mt-5" width="100%">
+            <div class="strike-score-target" [style.width]="targetWidthQp + '%'"
+                [@flyInOut]="{value: 'for', params: {width: targetWidthQp}}"></div>
+            <div class="strike-score-current" [style.width]="currentWidthQp + '%'"
+                [@flyInOut]="{value: 'for', params: {width: currentWidthQp}}"></div>
+        </div>
+    </div>
+    <mat-divider [vertical]="true"></mat-divider>
+    <div class="col col-lg-4 col-md-4 col-sm-4 scores-col">
+        <p class="head-text">Verbal Score</p>
+        <p class="head-score mt-2">V{{currentWidthV}}</p>
+        <div class="strike-score mt-5" width="100%">
+            <div class="strike-score-target" [style.width]="targetWidthVp + '%'"
+                [@flyInOut]="{value: 'for', params: {width: targetWidthVp}}"></div>
+            <div class="strike-score-current" [style.width]="currentWidthVp + '%'"
+                [@flyInOut]="{value: 'for', params: {width: currentWidthVp}}"></div>
+        </div>
+    </div>
+</div>
