@@ -15,6 +15,13 @@
     font-weight: 100;
 }
 
+.desc-text {
+    font-size: 14px;
+    margin: 0;
+    font-weight: 300;
+    color: gray;
+}
+
 .strike-score {
     background-color: lightgray;
     height: 12px;
@@ -26,20 +33,74 @@
     height: 12px;
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
-    background-color: blue;
+    background-color: #45A2E2;
     position: relative;
     top: -12px;
-    max-width: 800;
-    min-width: 0;
-    width: 100%;
-    transition: width .5s ease;
+    width:0;
+    transition: width 500ms ease-in-out;
 }
 
 .strike-score-target {
     height: 12px;
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
-    background-color: yellow;
+    background-color: #FCE297;
     width:0;
+    transition: width 500ms ease-in-out;
 }
 
+.target-arrow-top, .current-arrow-top {
+    margin-top: -22px;
+    float: right;
+}
+
+.target-arrow-bottom {
+    margin-top: 10px;
+}
+
+.target-arrow-top-icon, .target-arrow-bottom-icon {
+    transform: rotate(90deg);
+    color:#FCE297;
+    height: 8px;
+    width:5px;
+    margin-top: 2px;
+    margin-left: 15px;
+}
+
+.target-arrow-bottom-icon {
+    height: 24px;
+    width:24px;
+    margin-left: 0px;
+    transform: rotate(270deg);
+}
+
+.current-arrow-top-icon {
+    transform: rotate(90deg);
+    color:#45A2E2;
+    height: 8px;
+    width:5px;
+    margin-left: 15px;
+}
+
+.arrow-text {
+    margin-top: -15px;
+    margin-bottom: -12px;
+    color: lightgray;
+}
+
+.target-plus-text-right {
+    margin: 0;
+    width: fit-content;
+    float: right;
+    font-size: 9px;
+    top: -25px;
+    position: relative;
+    right: -50px;
+}
+
+.target-plus-text {
+    margin: auto;
+    width: fit-content;
+    float: right;
+    font-size: 9px;
+}

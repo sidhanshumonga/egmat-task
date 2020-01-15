@@ -8,3 +8,43 @@
     margin: 0;
     font-weight: 300;
 }
+
+
+.value-text {
+    font-family: Century 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:18px;
+    margin: 0;
+    font-weight: 100;
+    display:inline-block;
+    color: gray;
+}
+
+.value-input {
+    display:inline-block;
+    width: 75px;
+}
+
+.value-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.error {
+    border: 1px solid red;
+}
+
+mat-error {
+    font-size: 10px;
+}
+
+.error-div {
+    height: 5px;
+}
+
+.submit-button {
+    background-color: #45A2E2;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+}

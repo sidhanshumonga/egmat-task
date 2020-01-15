@@ -1,20 +1,45 @@
-<div class="row justify-content-center mt-3 p-3 outer-container">
-    <div class="col col-lg-3 col-md-3 col-sm-3">
-        <p class="head-text mb-3">Quant</p>
-        <app-input-value type="Quant"></app-input-value>
-    </div>
+<form [formGroup]="valueForm">
 
-    <div class="col col-lg-3 col-md-3 col-sm-3">
-        <p class="head-text mb-3">Verbal</p>
-        <app-input-value type="Verbal"></app-input-value>
+    <div class="row justify-content-center mt-3 p-3 outer-container">
+        <div class="col col-lg-3 col-md-3 col-sm-3">
+            <p class="head-text mb-3">Quant</p>
+            <!-- <app-input-value type="Quant"></app-input-value> -->
+
+            <p class="value-text mr-2">Current</p>
+            <input type="number" formControlName="currentValueq" class="value-input mx-2" [class.error]="error">
+            <p class="value-text mr-2">Target</p>
+            <input type="number" formControlName="targetValueq" class="value-input mx-2" [class.error]="error">
+
+            <div class="error-div">
+                <mat-error *ngIf="hasError('targetValueq', 'max')">Quant target value must be less than or equal to 60
+                </mat-error>
+                <mat-error *ngIf="hasError('currentValueq', 'max')">Quant current value must be less than or equal to 60
+                </mat-error>
+            </div>
+
+        </div>
+
+        <div class="col col-lg-3 col-md-3 col-sm-3">
+            <p class="head-text mb-3">Verbal</p>
+            <!-- <app-input-value type="Verbal"></app-input-value> -->
+
+            <p class="value-text mr-2">Current</p>
+            <input type="number" formControlName="currentValuev" class="value-input mx-2" [class.error]="error">
+            <p class="value-text mr-2">Target</p>
+            <input type="number" formControlName="targetValuev" class="value-input mx-2" [class.error]="error">
+
+            <div class="error-div">
+                <mat-error *ngIf="hasError('targetValuev', 'max')">Verbal target value must be less than or equal to 60
+                </mat-error>
+                <mat-error *ngIf="hasError('currentValuev', 'max')">Verbal current value must be less than or equal to
+                    60
+                </mat-error>
+            </div>
+
+        </div>
+        <div class="col col-lg-8 col-md-8 col-sm-8 text-center my-4">
+            <button class="btn btn-primary submit-button" (click)="updateValues()">Submit and Refresh</button>
+        </div>
+
     </div>
-    <div class="col col-lg-8 col-md-8 col-sm-8 text-center my-4">
-        <button class="btn btn-primary">Submit and Refresh</button>
-    </div>
-</div>
-<!-- 
-<div class="row justify-content-center outer-container">
-    <div class="col col-lg-8 col-md-8 col-sm-8 text-center">
-        <button class="btn btn-primary">Submit and Refresh</button>
-    </div>
-</div> -->
+</form>

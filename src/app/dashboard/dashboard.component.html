@@ -1,25 +1,66 @@
 <div class="row total-score-row justify-content-center p-5">
     <div class="col col-lg-8 col-md-8 col-sm-8 p-2">
         <p class="head-text">Total Score</p>
-        <p class="head-score mt-2">currentWidth</p>
+        <p class="head-score mt-2">{{currentWidth}}</p>
         <div class="strike-score mt-5" width="100%">
-            <div class="strike-score-target" [style.width]="targetWidthp + '%'"
-                [@flyInOut]="{value: 'for', params: {width: targetWidthp}}"></div>
-            <div class="strike-score-current" [style.width]="currentWidthp + '%'"
-                [@flyInOut]="{value: 'for', params: {width: currentWidthp}}"></div>
+            <div class="strike-score-target" [style.width]="targetWidthp + '%'">
+                <span class="target-arrow-top text-center"
+                    [class.target-arrow-bottom]="targetWidth - currentWidth < 45 && targetWidth - currentWidth > -45">
+                    <i *ngIf="targetWidth - currentWidth < 45 && targetWidth - currentWidth > -45"
+                        class="material-icons target-arrow-bottom-icon">play_arrow</i>
+                    <p class="arrow-text">{{targetWidth}}</p>
+                    <i *ngIf="targetWidth - currentWidth >= 45 || targetWidth - currentWidth < -45"
+                        class="material-icons target-arrow-top-icon">play_arrow</i>
+                </span>
+                <p class="target-plus-text" *ngIf="targetWidth - currentWidth > 40">+{{targetWidth - currentWidth}}</p>
+            </div>
+            <div class="strike-score-current" [style.width]="currentWidthp + '%'">
+                <span class="current-arrow-top text-center">
+                    <p class="arrow-text">{{currentWidth}}</p>
+                    <i class="material-icons current-arrow-top-icon">play_arrow</i>
+                </span>
+            </div>
+            <p class="target-plus-text-right" *ngIf="targetWidth - currentWidth <= 40">+{{targetWidth - currentWidth}}
+            </p>
+        </div>
+        <div class="desc-text py-3 mt-4">Your estimated GMAT score per your performance in this mock test is
+            {{currentWidth}}, which is
+            <b>{{ targetWidth - currentWidth === 0 ? 'equal to' : targetWidth - currentWidth >= 0 ? targetWidth - currentWidth + ' points lower than' : currentWidth - targetWidth + ' points higher than'}}
+            </b> your target GMAT score of {{targetWidth}}.
         </div>
     </div>
 </div>
 
-<div class="row mt-5 scores-row justify-content-center">
+<div class="row mt-5 scores-row justify-content-center p-5">
     <div class="col col-lg-4 col-md-4 col-sm-4 scores-col">
         <p class="head-text">Quant Score</p>
         <p class="head-score mt-2">Q{{currentWidthQ}}</p>
         <div class="strike-score mt-5" width="100%">
-            <div class="strike-score-target" [style.width]="targetWidthQp + '%'"
-                [@flyInOut]="{value: 'for', params: {width: targetWidthQp}}"></div>
-            <div class="strike-score-current" [style.width]="currentWidthQp + '%'"
-                [@flyInOut]="{value: 'for', params: {width: currentWidthQp}}"></div>
+            <div class="strike-score-target" [style.width]="targetWidthQp + '%'">
+                <span class="target-arrow-top text-center"
+                    [class.target-arrow-bottom]="targetWidthQ - currentWidthQ < 10 && targetWidthQ - currentWidthQ > -5">
+                    <i *ngIf="targetWidthQ - currentWidthQ < 10 && targetWidthQ - currentWidthQ > -5"
+                        class="material-icons target-arrow-bottom-icon">play_arrow</i>
+                    <p class="arrow-text">Q{{targetWidthQ}}</p>
+                    <i *ngIf="targetWidthQ - currentWidthQ >= 10 || targetWidthQ - currentWidthQ < -5"
+                        class="material-icons target-arrow-top-icon">play_arrow</i>
+                </span>
+                <p class="target-plus-text" *ngIf="targetWidthQ - currentWidthQ >= 10">+{{targetWidthQ - currentWidthQ}}
+                </p>
+            </div>
+            <div class="strike-score-current" [style.width]="currentWidthQp + '%'">
+                <span class="target-arrow-top text-center">
+                    <p class="arrow-text">Q{{currentWidthQ}}</p>
+                    <i class="material-icons current-arrow-top-icon">play_arrow</i>
+                </span>
+            </div>
+            <p class="target-plus-text-right" *ngIf="targetWidthQ - currentWidthQ <= 9">
+                +{{targetWidthQ - currentWidthQ}}</p>
+        </div>
+        <div class="desc-text py-3 mt-3">Your estimated quantitative score per your performance in this mock test is
+            Q{{currentWidthQ}}, which is
+            <b>{{ targetWidthQ - currentWidthQ === 0 ? 'equal to' : targetWidthQ - currentWidthQ >= 0 ? targetWidthQ - currentWidthQ + ' points lower than' : currentWidthQ - targetWidthQ + ' points higher than'}}
+            </b> your target GMAT score of Q{{targetWidthQ}}.
         </div>
     </div>
     <mat-divider [vertical]="true"></mat-divider>
@@ -27,10 +68,31 @@
         <p class="head-text">Verbal Score</p>
         <p class="head-score mt-2">V{{currentWidthV}}</p>
         <div class="strike-score mt-5" width="100%">
-            <div class="strike-score-target" [style.width]="targetWidthVp + '%'"
-                [@flyInOut]="{value: 'for', params: {width: targetWidthVp}}"></div>
-            <div class="strike-score-current" [style.width]="currentWidthVp + '%'"
-                [@flyInOut]="{value: 'for', params: {width: currentWidthVp}}"></div>
+            <div class="strike-score-target" [style.width]="targetWidthVp + '%'">
+                <span class="target-arrow-top text-center"
+                    [class.target-arrow-bottom]="(targetWidthV - currentWidthV) < 10  && (targetWidthV - currentWidthV) > -5">
+                    <i *ngIf="targetWidthV - currentWidthV < 10 && targetWidthV - currentWidthV > -5"
+                        class="material-icons target-arrow-bottom-icon">play_arrow</i>
+                    <p class="arrow-text">V{{targetWidthV}}</p>
+                    <i *ngIf="targetWidthV - currentWidthV >= 10 || targetWidthV - currentWidthV < -5"
+                        class="material-icons target-arrow-top-icon">play_arrow</i>
+                </span>
+                <p class="target-plus-text" *ngIf="targetWidthV - currentWidthV >= 10">+{{targetWidthV - currentWidthV}}
+                </p>
+            </div>
+            <div class="strike-score-current" [style.width]="currentWidthVp + '%'">
+                <span class="target-arrow-top text-center">
+                    <p class="arrow-text">V{{currentWidthV}}</p>
+                    <i class="material-icons current-arrow-top-icon">play_arrow</i>
+                </span>
+            </div>
+            <p class="target-plus-text-right" *ngIf="targetWidthV - currentWidthV <= 9">
+                +{{targetWidthV - currentWidthV}}</p>
+        </div>
+        <div class="desc-text py-3 mt-3">Your estimated quantitative score per your performance in this mock test is
+            Q{{currentWidthV}}, which is
+            <b>{{ targetWidthV - currentWidthV === 0 ? 'equal to' : targetWidthV - currentWidthV >= 0 ? targetWidthV - currentWidthV + ' points lower than' : currentWidthV - targetWidthV + ' points higher than'}}
+            </b> your target GMAT score of Q{{targetWidthV}}.
         </div>
     </div>
 </div>

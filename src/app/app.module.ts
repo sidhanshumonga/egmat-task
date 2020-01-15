@@ -4,19 +4,21 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { InputScoresComponent } from './input-scores/input-scores.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { InputValueComponent } from './input-value/input-value.component';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material';
 import { MatDividerModule } from '@angular/material/divider';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
+import { UpdateService } from './update.service'
+
 @NgModule({
   declarations: [
     AppComponent,
     InputScoresComponent,
-    DashboardComponent,
-    InputValueComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -25,9 +27,10 @@ import { MatDividerModule } from '@angular/material/divider';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatDividerModule
+    MatDividerModule,
+    MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [UpdateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

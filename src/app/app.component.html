@@ -1,2 +1,3 @@
-<app-input-scores></app-input-scores>
-<app-dashboard></app-dashboard>
+<app-input-scores (updateDashboard)="updateDashboard($event)"></app-input-scores>
+<mat-spinner  *ngIf="!showDashboard && clicked"></mat-spinner>
+<app-dashboard *ngIf="showDashboard" [scores]="scores"></app-dashboard>
