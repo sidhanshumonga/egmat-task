@@ -20,7 +20,8 @@
                     <i class="material-icons current-arrow-top-icon">play_arrow</i>
                 </span>
             </div>
-            <p class="target-plus-text-right" *ngIf="targetWidth - currentWidth <= 40">+{{targetWidth - currentWidth}}
+            <p class="target-plus-text-right" *ngIf="targetWidth - currentWidth <= 40 && targetWidth - currentWidth >0">
+                +{{targetWidth - currentWidth}}
             </p>
         </div>
         <div class="desc-text py-3 mt-4">Your estimated GMAT score per your performance in this mock test is
@@ -54,7 +55,8 @@
                     <i class="material-icons current-arrow-top-icon">play_arrow</i>
                 </span>
             </div>
-            <p class="target-plus-text-right" *ngIf="targetWidthQ - currentWidthQ <= 9">
+            <p class="target-plus-text-right"
+                *ngIf="targetWidthQ - currentWidthQ <= 9  && targetWidthQ - currentWidthQ >0">
                 +{{targetWidthQ - currentWidthQ}}</p>
         </div>
         <div class="desc-text py-3 mt-3">Your estimated quantitative score per your performance in this mock test is
@@ -86,7 +88,8 @@
                     <i class="material-icons current-arrow-top-icon">play_arrow</i>
                 </span>
             </div>
-            <p class="target-plus-text-right" *ngIf="targetWidthV - currentWidthV <= 9">
+            <p class="target-plus-text-right"
+                *ngIf="targetWidthV - currentWidthV <= 9 && targetWidthV - currentWidthV >0">
                 +{{targetWidthV - currentWidthV}}</p>
         </div>
         <div class="desc-text py-3 mt-3">Your estimated quantitative score per your performance in this mock test is
