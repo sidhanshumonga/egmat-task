@@ -14,5 +14,5 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Link to this project
 
-Navigate to `https://github.com/sidhanshumonga/egmat-task` to checkout the code.
-Navigate to `https://sidhanshumonga.github.io/egmat-task/` to check live project.
+Navigate to [Github code](https://github.com/sidhanshumonga/egmat-task) to checkout the code.
+Navigate to [Live Instance](https://sidhanshumonga.github.io/egmat-task) to check live project.
